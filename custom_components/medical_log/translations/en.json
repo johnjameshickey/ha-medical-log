@@ -1,0 +1,18 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add a child profile",
+        "description": "Create an independent Medical Log profile. Medication names are labels only; Medical Log does not provide dosing advice.",
+        "data": {
+          "child_name": "Child name",
+          "medication_1": "Medication 1 name",
+          "medication_2": "Medication 2 name"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "A Medical Log profile with this name already exists."
+    }
+  }
+}
