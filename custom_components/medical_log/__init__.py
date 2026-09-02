@@ -1,10 +1,24 @@
 from __future__ import annotations
 
+from pathlib import Path
+
+from homeassistant.components.http import StaticPathConfig
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 
 from .const import CONF_CHILD_NAME, DOMAIN, PLATFORMS
 from .model import MedicalLogData
+
+CARD_URL = "/medical_log/medical-log-card.js"
+
+
+async def async_setup(hass: HomeAssistant, config: dict) -> bool:
+    """Register bundled frontend assets."""
+    card_path = Path(__file__).parent / "www" / "medical-log-card.js"
+    await hass.http.async_register_static_paths(
+        [StaticPathConfig(CARD_URL, str(card_path), False)]
+    )
+    return True
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
