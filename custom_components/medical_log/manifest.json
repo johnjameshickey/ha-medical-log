@@ -1,0 +1,11 @@
+{
+  "domain": "medical_log",
+  "name": "Medical Log",
+  "codeowners": ["@johnjameshickey"],
+  "config_flow": true,
+  "documentation": "https://github.com/johnjameshickey/ha-medical-log",
+  "issue_tracker": "https://github.com/johnjameshickey/ha-medical-log/issues",
+  "integration_type": "helper",
+  "iot_class": "local_push",
+  "version": "0.1.0"
+}
